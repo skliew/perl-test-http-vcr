@@ -19,7 +19,7 @@ sub run {
 
         my $vcr = Test::HTTP::VCR->new(
             $tempfile,
-            {HTTP_CLIENT => $httpclientname}
+            {HTTPCLIENT => $httpclientname}
         );
         my $httpclient = $httpclientname->new;
 
@@ -36,7 +36,6 @@ sub run {
         is_deeply($response_playbank, $response, 'Played response is correct');
 
         unlink $tempfile;
-
     }
     done_testing();
 }
