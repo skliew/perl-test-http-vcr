@@ -111,6 +111,7 @@ sub record {
 
 =head2 play
 
+
 =cut
 
 sub play {
@@ -153,9 +154,14 @@ sub _run_request_func {
 =head1 TODO
 
 =over 4
+
 =item Spin up a simple HTTP server for testing
+
 =item Test other HTTP methods (POST, PUT, DELETE)
+
 =back
+
+=cut
 
 =head1 AUTHOR
 

@@ -41,11 +41,15 @@ NOTE: This is alpha-level software.
 
 =head2 play
 
+
 =head1 TODO
 
 =over 4
+
 =item Spin up a simple HTTP server for testing
+
 =item Test other HTTP methods (POST, PUT, DELETE)
+
 =back
 
 =head1 AUTHOR
