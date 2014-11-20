@@ -50,9 +50,22 @@ NOTE: This is alpha-level software.
 
 =cut
 
-=head1 SUBROUTINES/METHODS
+=head1 Class Methods
 
-=head2 new
+=head2 Furl->new($filename, [$opts])
+
+Returns a Test::HTTP::VCR object. Throws error when $filename
+is not passed in as the first argument.
+
+=over 4
+
+=item $filename specifies the file path to store the captured responses.
+
+=item $opts is optional. It should be a hash reference if used. It could contain an optional key
+'HTTPCLIENT' to specify the http client that needs its HTTP responses captured. Currently only 'Furl'
+and 'LWP::UserAgent' are supported.
+
+=back
 
 =cut
 
@@ -80,7 +93,12 @@ sub new {
     return $self;
 }
 
-=head2 record
+=head1 Instance Methods
+
+=head2 record($code)
+
+Returns 1. Records HTTP responses when HTTP requests are done using the 'HTTPCLIENT'
+set in I<new> or 'Furl' if 'HTTPCLIENT' is not set.
 
 =cut
 
@@ -109,8 +127,10 @@ sub record {
     1;
 }
 
-=head2 play
+=head2 play($code)
 
+Returns 1. Replays HTTP responses from $filename set in I<new> when HTTP requests are done
+using the 'HTTPCLIENT' (also set in I<new>) or 'Furl' if 'HTTPCLIENT' is not set.
 
 =cut
 
