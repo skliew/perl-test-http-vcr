@@ -9,9 +9,9 @@ Version 0.01
 # SYNOPSIS
 
     use Test::HTTP::VCR;
-    use Furl;
+    use HTTP::Tiny;
 
-    my $httpclient = Furl->new;
+    my $httpclient = HTTP::Tiny->new;
     my $filename = 'mytape.tape';
     my $vcr = Test::HTTP::VCR->new($filename);
     my $response;
@@ -35,22 +35,21 @@ NOTE: This is alpha-level software.
 
 # Class Methods
 
-## Furl->new($filename, \[$opts\])
+## Test::HTTP::VCR->new($filename, \[$opts\])
 
 Returns a Test::HTTP::VCR object. Throws error when $filename
 is not passed in as the first argument.
 
 - $filename specifies the file path to store the captured responses.
 - $opts is optional. It should be a hash reference if used. It could contain an optional key
-'HTTPCLIENT' to specify the http client that needs its HTTP responses captured. Currently only 'Furl'
-and 'LWP::UserAgent' are supported.
+'HTTPCLIENT' to specify the http client that needs its HTTP responses captured. Currently only Furl, HTTP::Tiny and LWP::UserAgent are supported.
 
 # Instance Methods
 
 ## record($code)
 
 Returns 1. Records HTTP responses when HTTP requests are done using the 'HTTPCLIENT'
-set in _new_ or 'Furl' if 'HTTPCLIENT' is not set.
+set in _new_ or 'HTTP::Tiny' if 'HTTPCLIENT' is not set.
 
 ## play($code)
 
