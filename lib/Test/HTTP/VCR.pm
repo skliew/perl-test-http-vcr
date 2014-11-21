@@ -52,7 +52,7 @@ NOTE: This is alpha-level software.
 
 =head1 Class Methods
 
-=head2 Furl->new($filename, [$opts])
+=head2 Test::HTTP::VCR->new($filename, [$opts])
 
 Returns a Test::HTTP::VCR object. Throws error when $filename
 is not passed in as the first argument.
