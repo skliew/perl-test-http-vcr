@@ -6,7 +6,7 @@ use warnings FATAL => 'all';
 use Data::Dumper;
 use Carp qw(croak);
 
-use constant DEFAULT_HTTPCLIENT => 'Furl';
+use constant DEFAULT_HTTPCLIENT => 'HTTP::Tiny';
 
 =head1 NAME
 
@@ -24,9 +24,9 @@ our $VERSION = '0.01';
 =head1 SYNOPSIS
 
     use Test::HTTP::VCR;
-    use Furl;
+    use HTTP::Tiny;
 
-    my $httpclient = Furl->new;
+    my $httpclient = HTTP::Tiny->new;
     my $filename = 'mytape.tape';
     my $vcr = Test::HTTP::VCR->new($filename);
     my $response;
@@ -62,8 +62,7 @@ is not passed in as the first argument.
 =item $filename specifies the file path to store the captured responses.
 
 =item $opts is optional. It should be a hash reference if used. It could contain an optional key
-'HTTPCLIENT' to specify the http client that needs its HTTP responses captured. Currently only 'Furl'
-and 'LWP::UserAgent' are supported.
+'HTTPCLIENT' to specify the http client that needs its HTTP responses captured. Currently only Furl, HTTP::Tiny and LWP::UserAgent are supported.
 
 =back
 
@@ -98,7 +97,7 @@ sub new {
 =head2 record($code)
 
 Returns 1. Records HTTP responses when HTTP requests are done using the 'HTTPCLIENT'
-set in I<new> or 'Furl' if 'HTTPCLIENT' is not set.
+set in I<new> or 'HTTP::Tiny' if 'HTTPCLIENT' is not set.
 
 =cut
 
