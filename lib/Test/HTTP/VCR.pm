@@ -46,7 +46,7 @@ testing web APIs.
 
 Inspired by the Ruby library, VCR (https://github.com/vcr/vcr)
 
-NOTE: This is alpha-level software.
+NOTE: This is alpha-level software. Please see also L<Test::VCR::LWP|https://metacpan.org/pod/Test::VCR::LWP>.
 
 =cut
 
@@ -179,6 +179,12 @@ sub _run_request_func {
 =item Test other HTTP methods (POST, PUT, DELETE)
 
 =back
+
+=cut
+
+=head1 SEE ALSO
+
+L<Test::VCR::LWP|https://metacpan.org/pod/Test::VCR::LWP>
 
 =cut
 

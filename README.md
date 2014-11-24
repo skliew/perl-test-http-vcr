@@ -31,7 +31,7 @@ testing web APIs.
 
 Inspired by the Ruby library, VCR (https://github.com/vcr/vcr)
 
-NOTE: This is alpha-level software.
+NOTE: This is alpha-level software. Please see also [Test::VCR::LWP](https://metacpan.org/pod/Test::VCR::LWP).
 
 # Class Methods
 
@@ -60,6 +60,10 @@ using the 'HTTPCLIENT' (also set in _new_) or 'Furl' if 'HTTPCLIENT' is not set.
 
 - Spin up a simple HTTP server for testing
 - Test other HTTP methods (POST, PUT, DELETE)
+
+# SEE ALSO
+
+[Test::VCR::LWP](https://metacpan.org/pod/Test::VCR::LWP)
 
 # AUTHOR
 
