@@ -9,3 +9,4 @@ t/01-furl.t
 t/01-lwp-useragent.t
 t/01-http-tiny.t
 t/TestRunner.pm
+t/TestServer.pm

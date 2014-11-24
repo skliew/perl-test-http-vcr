@@ -17,6 +17,9 @@ WriteMakefile(
     BUILD_REQUIRES => {
         'Test::More' => 0,
     },
+    TEST_REQUIRES => {
+        'HTTP::Server::Simple' => 0.44,
+    },
     PREREQ_PM => {
         #'ABC'              => 1.6,
         #'Foo::Bar::Module' => 5.0401,
