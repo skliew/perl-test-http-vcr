@@ -42,7 +42,7 @@ is not passed in as the first argument.
 
 - $filename specifies the file path to store the captured responses.
 - $opts is optional. It should be a hash reference if used. It could contain an optional key
-'HTTPCLIENT' to specify the http client that needs its HTTP responses captured. Currently only Furl, HTTP::Tiny and LWP::UserAgent are supported.
+'HTTPCLIENT' to specify the http client that needs its HTTP responses captured. Currently only Furl, HTTP::Tiny and LWP::UserAgent have been tested.
 
 # Instance Methods
 
@@ -51,10 +51,14 @@ is not passed in as the first argument.
 Returns 1. Records HTTP responses when HTTP requests are done using the 'HTTPCLIENT'
 set in _new_ or 'HTTP::Tiny' if 'HTTPCLIENT' is not set.
 
+- $code is a code reference to a function where the HTTP requests would have their responses captured.
+
 ## play($code)
 
 Returns 1. Replays HTTP responses from $filename set in _new_ when HTTP requests are done
-using the 'HTTPCLIENT' (also set in _new_) or 'Furl' if 'HTTPCLIENT' is not set.
+using the 'HTTPCLIENT' (also set in _new_) or 'HTTP::Tiny' if 'HTTPCLIENT' is not set.
+
+- $code is a code reference to a function where the HTTP requests would have the captured responses returned.
 
 # TODO
 

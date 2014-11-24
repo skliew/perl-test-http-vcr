@@ -62,7 +62,7 @@ is not passed in as the first argument.
 =item $filename specifies the file path to store the captured responses.
 
 =item $opts is optional. It should be a hash reference if used. It could contain an optional key
-'HTTPCLIENT' to specify the http client that needs its HTTP responses captured. Currently only Furl, HTTP::Tiny and LWP::UserAgent are supported.
+'HTTPCLIENT' to specify the http client that needs its HTTP responses captured. Currently only Furl, HTTP::Tiny and LWP::UserAgent have been tested.
 
 =back
 
@@ -99,6 +99,12 @@ sub new {
 Returns 1. Records HTTP responses when HTTP requests are done using the 'HTTPCLIENT'
 set in I<new> or 'HTTP::Tiny' if 'HTTPCLIENT' is not set.
 
+=over 4
+
+=item $code is a code reference to a function where the HTTP requests would have their responses captured.
+
+=back
+
 =cut
 
 sub record {
@@ -129,7 +135,13 @@ sub record {
 =head2 play($code)
 
 Returns 1. Replays HTTP responses from $filename set in I<new> when HTTP requests are done
-using the 'HTTPCLIENT' (also set in I<new>) or 'Furl' if 'HTTPCLIENT' is not set.
+using the 'HTTPCLIENT' (also set in I<new>) or 'HTTP::Tiny' if 'HTTPCLIENT' is not set.
+
+=over 4
+
+=item $code is a code reference to a function where the HTTP requests would have the captured responses returned.
+
+=back
 
 =cut
 
